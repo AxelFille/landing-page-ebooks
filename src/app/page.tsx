@@ -16,6 +16,13 @@ import {
 } from 'lucide-react';
 
 export default function LandingPage() {
+  const scrollToEbooks = () => {
+    const ebooksSection = document.getElementById('ebooks-section');
+    if (ebooksSection) {
+      ebooksSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* SEÇÃO 1: HERO */}
@@ -30,7 +37,10 @@ export default function LandingPage() {
           <p className="text-lg mb-10 text-blue-200 max-w-3xl mx-auto">
             Conteúdo exclusivo criado por especialista com mais de 7 anos de experiência em sedação veterinária
           </p>
-          <button className="bg-[#00AA66] hover:bg-[#008855] text-white font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 hover:scale-105 shadow-2xl">
+          <button 
+            onClick={scrollToEbooks}
+            className="bg-[#00AA66] hover:bg-[#008855] text-white font-bold py-4 px-8 rounded-lg text-xl transition-all duration-300 hover:scale-105 shadow-2xl"
+          >
             Acessar os Ebooks Agora
           </button>
         </div>
@@ -45,7 +55,7 @@ export default function LandingPage() {
       </section>
 
       {/* SEÇÃO 2: APRESENTAÇÃO DOS 3 EBOOKS */}
-      <section className="py-20 px-4 bg-[#F5F5F5]">
+      <section id="ebooks-section" className="py-20 px-4 bg-[#F5F5F5]">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-[#333333] mb-16">
             Seus 3 Guias Essenciais
@@ -307,15 +317,24 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
               <p className="text-lg mb-2">Guia da Sedação</p>
-              <p className="text-2xl font-bold">R$ 9,90</p>
+              <p className="text-2xl font-bold mb-4">R$ 9,90</p>
+              <a href="https://pay.kiwify.com.br/hctZJfZ" className="bg-[#00AA66] hover:bg-[#008855] text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 inline-block">
+                Comprar Agora
+              </a>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
               <p className="text-lg mb-2">Sedoanalgesia</p>
-              <p className="text-2xl font-bold">R$ 15,90</p>
+              <p className="text-2xl font-bold mb-4">R$ 15,90</p>
+              <a href="https://pay.kiwify.com.br/tOB79FR" className="bg-[#00AA66] hover:bg-[#008855] text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 inline-block">
+                Comprar Agora
+              </a>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
               <p className="text-lg mb-2">Cálculos e Diluição</p>
-              <p className="text-2xl font-bold">R$ 19,90</p>
+              <p className="text-2xl font-bold mb-4">R$ 19,90</p>
+              <a href="https://pay.kiwify.com.br/tOB79FR" className="bg-[#00AA66] hover:bg-[#008855] text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 inline-block">
+                Comprar Agora
+              </a>
             </div>
           </div>
           
